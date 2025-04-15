@@ -57,7 +57,7 @@ export async function handler() {
         <div class="section">
           <h2>📮 Endpoint</h2>
           <p><strong>POST</strong> to:</p>
-          <code>https://dia-api.netlify.app/chat</code>
+          <code>https://dia-api.netlify.app/</code>
         </div>
 
         <div class="section">
