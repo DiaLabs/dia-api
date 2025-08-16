@@ -1,7 +1,9 @@
 export async function handler(event) {
   try {
-    const latest = await fetch("https://webhook.site/token/3348f322-9343-4329-8b8d-cbc61ef26216/requests?query=uuid:0946fe0a-e192-414c-944a-9e39cc4d2413");
+    const latest = await fetch("https://webhook.site/token/3348f322-9343-4329-8b8d-cbc61ef26216/request/latest/");
     const json = await latest.json();
+
+    // ✅ json is the request object (matches what you pasted)
     const parsed = JSON.parse(json.content);
     const cloudflareUrl = parsed.api_url;
 
@@ -29,7 +31,7 @@ export async function handler(event) {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Dia is resting right now. Please check back soon 💤" })
+      body: JSON.stringify({ error: "Dia is resting right now. Please check back soon 💤", details: err.message })
     };
   }
 }
